@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ghost Employer Tracker</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --border: #2e3148;
+      --text: #e2e8f0;
+      --muted: #8892a4;
+      --red: #ef4444;
+      --orange: #f97316;
+      --yellow: #eab308;
+      --green: #22c55e;
+      --accent: #6366f1;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    header h1 { font-size: 1.4rem; font-weight: 700; }
+    header span { font-size: 1.6rem; }
+    #meta { margin-left: auto; font-size: 0.8rem; color: var(--muted); text-align: right; }
+
+    main { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    /* Stats bar */
+    .stats { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      flex: 1;
+      min-width: 140px;
+    }
+    .stat-card .label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+    .stat-card .value { font-size: 2rem; font-weight: 700; margin-top: .25rem; }
+
+    /* Chart */
+    .chart-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .chart-wrap h2 { font-size: 1rem; margin-bottom: 1rem; color: var(--muted); }
+    canvas { width: 100% !important; max-height: 260px; }
+
+    /* Company grid */
+    h2.section { font-size: 1.1rem; margin-bottom: 1rem; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1rem; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .card-header {
+      padding: .85rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .card-header .name { font-weight: 600; font-size: .95rem; flex: 1; }
+    .badge {
+      font-size: .75rem;
+      font-weight: 700;
+      padding: .2rem .55rem;
+      border-radius: 999px;
+    }
+    .badge-critical { background: rgba(239,68,68,.2);  color: var(--red); }
+    .badge-high     { background: rgba(249,115,22,.2); color: var(--orange); }
+    .badge-medium   { background: rgba(234,179,8,.2);  color: var(--yellow); }
+    .badge-low      { background: rgba(34,197,94,.2);  color: var(--green); }
+
+    .score-bar-wrap { padding: .5rem 1rem; border-bottom: 1px solid var(--border); }
+    .score-label { display: flex; justify-content: space-between; font-size: .75rem; color: var(--muted); margin-bottom: .3rem; }
+    .score-bar { height: 6px; border-radius: 3px; background: var(--border); }
+    .score-fill { height: 100%; border-radius: 3px; transition: width .5s; }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .5rem;
+      padding: .75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      font-size: .8rem;
+    }
+    .metric { color: var(--muted); }
+    .metric span { color: var(--text); font-weight: 600; }
+
+    details { padding: .75rem 1rem; }
+    summary {
+      font-size: .8rem;
+      color: var(--muted);
+      cursor: pointer;
+      user-select: none;
+      list-style: none;
+    }
+    summary::before { content: "▶ "; font-size: .65rem; }
+    details[open] summary::before { content: "▼ "; }
+    .timeline { margin-top: .6rem; display: flex; flex-direction: column; gap: .4rem; }
+    .event {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .75rem;
+    }
+    .event .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .dot-open   { background: var(--green); }
+    .dot-closed { background: var(--red); }
+    .event .date { color: var(--muted); flex-shrink: 0; width: 80px; }
+    .event a { color: var(--text); text-decoration: none; }
+    .event a:hover { color: var(--accent); text-decoration: underline; }
+
+    #loading { text-align: center; padding: 4rem; color: var(--muted); font-size: 1.1rem; }
+    #error   { text-align: center; padding: 4rem; color: var(--red); }
+  </style>
+</head>
+<body>
+
+<header>
+  <span>👻</span>
+  <h1>Ghost Employer Tracker</h1>
+  <div id="meta">Loading…</div>
+</header>
+
+<main>
+  <div id="loading">Loading dashboard data…</div>
+  <div id="error" style="display:none"></div>
+
+  <div id="app" style="display:none">
+    <div class="stats">
+      <div class="stat-card">
+        <div class="label">Total postings</div>
+        <div class="value" id="s-total">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Companies tracked</div>
+        <div class="value" id="s-companies">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">High-risk (&ge;60)</div>
+        <div class="value" id="s-highrisk" style="color:var(--red)">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="label">Last updated</div>
+        <div class="value" id="s-updated" style="font-size:1rem;padding-top:.35rem">—</div>
+      </div>
+    </div>
+
+    <div class="chart-wrap">
+      <h2>Ghost Score by Company (top 10)</h2>
+      <canvas id="barChart"></canvas>
+    </div>
+
+    <h2 class="section">Company Risk Cards — sorted by ghost score ↓</h2>
+    <div class="grid" id="grid"></div>
+  </div>
+</main>
+
+<script>
+  function scoreColor(s) {
+    if (s >= 70) return getComputedStyle(document.documentElement).getPropertyValue('--red').trim();
+    if (s >= 50) return getComputedStyle(document.documentElement).getPropertyValue('--orange').trim();
+    if (s >= 30) return getComputedStyle(document.documentElement).getPropertyValue('--yellow').trim();
+    return getComputedStyle(document.documentElement).getPropertyValue('--green').trim();
+  }
+
+  function scoreBadge(s) {
+    if (s >= 70) return ['CRITICAL', 'critical'];
+    if (s >= 50) return ['HIGH',     'high'];
+    if (s >= 30) return ['MEDIUM',   'medium'];
+    return ['LOW', 'low'];
+  }
+
+  function fmtLifespan(v) {
+    if (v === null || v === undefined) return 'n/a';
+    return v + ' days';
+  }
+
+  function buildCard(c) {
+    const [label, cls] = scoreBadge(c.ghost_score);
+    const fillColor = scoreColor(c.ghost_score);
+    const pct = Math.min(c.ghost_score, 100);
+
+    const timelineRows = (c.timeline || []).map(ev => `
+      <div class="event">
+        <div class="dot dot-${ev.status}"></div>
+        <span class="date">${ev.date}</span>
+        <a href="${ev.url}" target="_blank" rel="noopener">${ev.title}</a>
+        <span style="color:var(--muted);margin-left:auto">${ev.status}</span>
+      </div>`).join('');
+
+    return `
+      <div class="card">
+        <div class="card-header">
+          <div class="name">${c.company}</div>
+          <div class="badge badge-${cls}">${label}</div>
+        </div>
+        <div class="score-bar-wrap">
+          <div class="score-label">
+            <span>Ghost Score</span>
+            <span>${c.ghost_score}/100</span>
+          </div>
+          <div class="score-bar">
+            <div class="score-fill" style="width:${pct}%;background:${fillColor}"></div>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric">Postings (30d) <span>${c.repost_count_30d}</span></div>
+          <div class="metric">Postings (60d) <span>${c.repost_count_60d}</span></div>
+          <div class="metric">Avg lifespan <span>${fmtLifespan(c.avg_lifespan_days)}</span></div>
+          <div class="metric">Title vagueness <span>${(c.title_vagueness * 100).toFixed(0)}%</span></div>
+        </div>
+        <details>
+          <summary>Recent postings (${(c.timeline || []).length})</summary>
+          <div class="timeline">${timelineRows}</div>
+        </details>
+      </div>`;
+  }
+
+  async function init() {
+    try {
+      const res = await fetch('data.json');
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('app').style.display = '';
+
+      // Meta
+      const d = new Date(data.generated_at);
+      document.getElementById('meta').textContent =
+        'Updated: ' + d.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
+
+      // Stats
+      document.getElementById('s-total').textContent = data.total_postings;
+      document.getElementById('s-companies').textContent = data.companies.length;
+      document.getElementById('s-highrisk').textContent =
+        data.companies.filter(c => c.ghost_score >= 60).length;
+      document.getElementById('s-updated').textContent =
+        d.toLocaleDateString(undefined, { dateStyle: 'medium' });
+
+      // Bar chart (top 10) — optional; skipped if Chart.js CDN is unavailable
+      const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+      try {
+        const top = data.companies.slice(0, 10);
+        new Chart(document.getElementById('barChart'), {
+          type: 'bar',
+          data: {
+            labels: top.map(c => c.company),
+            datasets: [{
+              label: 'Ghost Score',
+              data: top.map(c => c.ghost_score),
+              backgroundColor: top.map(c => scoreColor(c.ghost_score) + 'cc'),
+              borderColor:     top.map(c => scoreColor(c.ghost_score)),
+              borderWidth: 1,
+              borderRadius: 4,
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: { legend: { display: false } },
+            scales: {
+              x: { ticks: { color: css('--muted') }, grid: { color: css('--border') } },
+              y: {
+                min: 0, max: 100,
+                ticks: { color: css('--muted') },
+                grid: { color: css('--border') }
+              }
+            }
+          }
+        });
+      } catch (_) {
+        document.querySelector('.chart-wrap').style.display = 'none';
+      }
+
+      // Cards
+      document.getElementById('grid').innerHTML =
+        data.companies.map(buildCard).join('');
+
+    } catch (err) {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('error').style.display = '';
+      document.getElementById('error').textContent =
+        'Failed to load data.json — ' + err.message;
+    }
+  }
+
+  init();
+</script>
+</body>
+</html>
