@@ -1,0 +1,495 @@
+{
+  "generated_at": "2026-02-25T15:49:39Z",
+  "total_postings": 89,
+  "companies": [
+    {
+      "company": "Global Solutions Ltd.",
+      "ghost_score": 85.6,
+      "repost_count_30d": 9,
+      "repost_count_60d": 10,
+      "avg_lifespan_days": 8.3,
+      "title_vagueness": 0.6191,
+      "total_postings": 14,
+      "timeline": [
+        {
+          "date": "2026-02-25",
+          "title": "Senior Developer",
+          "status": "open",
+          "url": "https://example.com/jobs/Global_Solutions_Ltd.-Senior_Developer-2026-02-25-2"
+        },
+        {
+          "date": "2026-02-24",
+          "title": "DevOps Engineer",
+          "status": "open",
+          "url": "https://example.com/jobs/Global_Solutions_Ltd.-DevOps_Engineer-2026-02-24-8"
+        },
+        {
+          "date": "2026-02-23",
+          "title": "Business Analyst",
+          "status": "open",
+          "url": "https://example.com/jobs/Global_Solutions_Ltd.-Business_Analyst-2026-02-23-4"
+        },
+        {
+          "date": "2026-02-21",
+          "title": "Software Engineer",
+          "status": "open",
+          "url": "https://example.com/jobs/Global_Solutions_Ltd.-Software_Engineer-2026-02-21-4"
+        },
+        {
+          "date": "2026-02-17",
+          "title": "Business Analyst",
+          "status": "open",
+          "url": "https://example.com/jobs/Global_Solutions_Ltd.-Business_Analyst-2026-02-17-1"
+        },
+        {
+          "date": "2026-02-12",
+          "title": "Data Scientist",
+          "status": "closed",
+          "url": "https://example.com/jobs/Global_Solutions_Ltd.-Data_Scientist-2026-02-12-6"
+        },
+        {
+          "date": "2026-02-09",
+          "title": "DevOps Engineer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Global_Solutions_Ltd.-DevOps_Engineer-2026-02-09-3"
+        },
+        {
+          "date": "2026-01-30",
+          "title": "Data Scientist",
+          "status": "closed",
+          "url": "https://example.com/jobs/Global_Solutions_Ltd.-Data_Scientist-2026-01-30-1"
+        },
+        {
+          "date": "2026-01-28",
+          "title": "Senior Developer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Global_Solutions_Ltd.-Senior_Developer-2026-01-28-3"
+        },
+        {
+          "date": "2025-12-27",
+          "title": "Senior Developer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Global_Solutions_Ltd.-Senior_Developer-2025-12-27-7"
+        }
+      ]
+    },
+    {
+      "company": "Digital Dynamics",
+      "ghost_score": 75.9,
+      "repost_count_30d": 6,
+      "repost_count_60d": 10,
+      "avg_lifespan_days": 8.9,
+      "title_vagueness": 0.6445,
+      "total_postings": 15,
+      "timeline": [
+        {
+          "date": "2026-02-24",
+          "title": "Machine Learning Engineer",
+          "status": "open",
+          "url": "https://example.com/jobs/Digital_Dynamics-Machine_Learning_Engineer-2026-02-24-3"
+        },
+        {
+          "date": "2026-02-22",
+          "title": "Machine Learning Engineer",
+          "status": "open",
+          "url": "https://example.com/jobs/Digital_Dynamics-Machine_Learning_Engineer-2026-02-22-6"
+        },
+        {
+          "date": "2026-02-21",
+          "title": "DevOps Engineer",
+          "status": "open",
+          "url": "https://example.com/jobs/Digital_Dynamics-DevOps_Engineer-2026-02-21-0"
+        },
+        {
+          "date": "2026-02-16",
+          "title": "Full Stack Developer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Digital_Dynamics-Full_Stack_Developer-2026-02-16-1"
+        },
+        {
+          "date": "2026-02-13",
+          "title": "Full Stack Developer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Digital_Dynamics-Full_Stack_Developer-2026-02-13-0"
+        },
+        {
+          "date": "2026-01-31",
+          "title": "Data Scientist",
+          "status": "closed",
+          "url": "https://example.com/jobs/Digital_Dynamics-Data_Scientist-2026-01-31-1"
+        },
+        {
+          "date": "2026-01-19",
+          "title": "Senior Developer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Digital_Dynamics-Senior_Developer-2026-01-19-3"
+        },
+        {
+          "date": "2026-01-14",
+          "title": "Business Analyst",
+          "status": "closed",
+          "url": "https://example.com/jobs/Digital_Dynamics-Business_Analyst-2026-01-14-7"
+        },
+        {
+          "date": "2026-01-09",
+          "title": "DevOps Engineer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Digital_Dynamics-DevOps_Engineer-2026-01-09-2"
+        },
+        {
+          "date": "2026-01-06",
+          "title": "DevOps Engineer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Digital_Dynamics-DevOps_Engineer-2026-01-06-4"
+        }
+      ]
+    },
+    {
+      "company": "TechVentures Inc.",
+      "ghost_score": 75.4,
+      "repost_count_30d": 6,
+      "repost_count_60d": 12,
+      "avg_lifespan_days": 7.7,
+      "title_vagueness": 0.5965,
+      "total_postings": 19,
+      "timeline": [
+        {
+          "date": "2026-02-17",
+          "title": "Software Engineer",
+          "status": "closed",
+          "url": "https://example.com/jobs/TechVentures_Inc.-Software_Engineer-2026-02-17-7"
+        },
+        {
+          "date": "2026-02-09",
+          "title": "Software Engineer",
+          "status": "closed",
+          "url": "https://example.com/jobs/TechVentures_Inc.-Software_Engineer-2026-02-09-3"
+        },
+        {
+          "date": "2026-02-09",
+          "title": "Data Scientist",
+          "status": "closed",
+          "url": "https://example.com/jobs/TechVentures_Inc.-Data_Scientist-2026-02-09-8"
+        },
+        {
+          "date": "2026-02-05",
+          "title": "Data Scientist",
+          "status": "closed",
+          "url": "https://example.com/jobs/TechVentures_Inc.-Data_Scientist-2026-02-05-1"
+        },
+        {
+          "date": "2026-02-05",
+          "title": "Full Stack Developer",
+          "status": "closed",
+          "url": "https://example.com/jobs/TechVentures_Inc.-Full_Stack_Developer-2026-02-05-6"
+        },
+        {
+          "date": "2026-01-27",
+          "title": "Data Scientist",
+          "status": "closed",
+          "url": "https://example.com/jobs/TechVentures_Inc.-Data_Scientist-2026-01-27-5"
+        },
+        {
+          "date": "2026-01-23",
+          "title": "Senior Developer",
+          "status": "closed",
+          "url": "https://example.com/jobs/TechVentures_Inc.-Senior_Developer-2026-01-23-7"
+        },
+        {
+          "date": "2026-01-18",
+          "title": "Business Analyst",
+          "status": "closed",
+          "url": "https://example.com/jobs/TechVentures_Inc.-Business_Analyst-2026-01-18-4"
+        },
+        {
+          "date": "2026-01-18",
+          "title": "Project Manager",
+          "status": "closed",
+          "url": "https://example.com/jobs/TechVentures_Inc.-Project_Manager-2026-01-18-9"
+        },
+        {
+          "date": "2026-01-15",
+          "title": "Senior Developer",
+          "status": "closed",
+          "url": "https://example.com/jobs/TechVentures_Inc.-Senior_Developer-2026-01-15-0"
+        }
+      ]
+    },
+    {
+      "company": "Future Systems",
+      "ghost_score": 61.5,
+      "repost_count_30d": 3,
+      "repost_count_60d": 6,
+      "avg_lifespan_days": 8.9,
+      "title_vagueness": 0.6667,
+      "total_postings": 11,
+      "timeline": [
+        {
+          "date": "2026-02-08",
+          "title": "Full Stack Developer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Future_Systems-Full_Stack_Developer-2026-02-08-1"
+        },
+        {
+          "date": "2026-02-03",
+          "title": "Software Engineer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Future_Systems-Software_Engineer-2026-02-03-2"
+        },
+        {
+          "date": "2026-01-27",
+          "title": "Business Analyst",
+          "status": "closed",
+          "url": "https://example.com/jobs/Future_Systems-Business_Analyst-2026-01-27-4"
+        },
+        {
+          "date": "2026-01-16",
+          "title": "Full Stack Developer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Future_Systems-Full_Stack_Developer-2026-01-16-3"
+        },
+        {
+          "date": "2026-01-15",
+          "title": "Machine Learning Engineer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Future_Systems-Machine_Learning_Engineer-2026-01-15-1"
+        },
+        {
+          "date": "2026-01-09",
+          "title": "Business Analyst",
+          "status": "closed",
+          "url": "https://example.com/jobs/Future_Systems-Business_Analyst-2026-01-09-2"
+        },
+        {
+          "date": "2025-12-18",
+          "title": "DevOps Engineer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Future_Systems-DevOps_Engineer-2025-12-18-0"
+        },
+        {
+          "date": "2025-12-07",
+          "title": "Software Engineer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Future_Systems-Software_Engineer-2025-12-07-5"
+        },
+        {
+          "date": "2025-12-05",
+          "title": "Machine Learning Engineer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Future_Systems-Machine_Learning_Engineer-2025-12-05-0"
+        },
+        {
+          "date": "2025-12-02",
+          "title": "Machine Learning Engineer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Future_Systems-Machine_Learning_Engineer-2025-12-02-4"
+        }
+      ]
+    },
+    {
+      "company": "Innovation Corp",
+      "ghost_score": 56.0,
+      "repost_count_30d": 2,
+      "repost_count_60d": 12,
+      "avg_lifespan_days": 7.9,
+      "title_vagueness": 0.6222,
+      "total_postings": 15,
+      "timeline": [
+        {
+          "date": "2026-02-25",
+          "title": "Data Scientist",
+          "status": "open",
+          "url": "https://example.com/jobs/Innovation_Corp-Data_Scientist-2026-02-25-6"
+        },
+        {
+          "date": "2026-02-11",
+          "title": "Data Scientist",
+          "status": "closed",
+          "url": "https://example.com/jobs/Innovation_Corp-Data_Scientist-2026-02-11-2"
+        },
+        {
+          "date": "2026-01-23",
+          "title": "Machine Learning Engineer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Innovation_Corp-Machine_Learning_Engineer-2026-01-23-5"
+        },
+        {
+          "date": "2026-01-22",
+          "title": "Machine Learning Engineer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Innovation_Corp-Machine_Learning_Engineer-2026-01-22-0"
+        },
+        {
+          "date": "2026-01-18",
+          "title": "Project Manager",
+          "status": "closed",
+          "url": "https://example.com/jobs/Innovation_Corp-Project_Manager-2026-01-18-1"
+        },
+        {
+          "date": "2026-01-17",
+          "title": "Senior Developer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Innovation_Corp-Senior_Developer-2026-01-17-4"
+        },
+        {
+          "date": "2026-01-16",
+          "title": "Senior Developer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Innovation_Corp-Senior_Developer-2026-01-16-3"
+        },
+        {
+          "date": "2026-01-02",
+          "title": "Machine Learning Engineer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Innovation_Corp-Machine_Learning_Engineer-2026-01-02-2"
+        },
+        {
+          "date": "2026-01-02",
+          "title": "Software Engineer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Innovation_Corp-Software_Engineer-2026-01-02-3"
+        },
+        {
+          "date": "2026-01-02",
+          "title": "Software Engineer",
+          "status": "closed",
+          "url": "https://example.com/jobs/Innovation_Corp-Software_Engineer-2026-01-02-4"
+        }
+      ]
+    },
+    {
+      "company": "OpenSource LLC",
+      "ghost_score": 35.8,
+      "repost_count_30d": 3,
+      "repost_count_60d": 3,
+      "avg_lifespan_days": 30.0,
+      "title_vagueness": 0.1333,
+      "total_postings": 4,
+      "timeline": [
+        {
+          "date": "2026-02-13",
+          "title": "Data Engineer (dbt + Snowflake)",
+          "status": "open",
+          "url": "https://example.com/jobs/OpenSource_LLC-Data_Engineer_(dbt_+_Snowflake)-2026-02-13-1"
+        },
+        {
+          "date": "2026-02-07",
+          "title": "Data Engineer (dbt + Snowflake)",
+          "status": "open",
+          "url": "https://example.com/jobs/OpenSource_LLC-Data_Engineer_(dbt_+_Snowflake)-2026-02-07-0"
+        },
+        {
+          "date": "2026-01-30",
+          "title": "Site Reliability Engineer (Kubernetes)",
+          "status": "open",
+          "url": "https://example.com/jobs/OpenSource_LLC-Site_Reliability_Engineer_(Kubernetes)-2026-01-30-2"
+        },
+        {
+          "date": "2025-11-30",
+          "title": "Data Engineer (dbt + Snowflake)",
+          "status": "closed",
+          "url": "https://example.com/jobs/OpenSource_LLC-Data_Engineer_(dbt_+_Snowflake)-2025-11-30-0"
+        }
+      ]
+    },
+    {
+      "company": "Acme Software",
+      "ghost_score": 18.8,
+      "repost_count_30d": 1,
+      "repost_count_60d": 3,
+      "avg_lifespan_days": 42.0,
+      "title_vagueness": 0.1333,
+      "total_postings": 4,
+      "timeline": [
+        {
+          "date": "2026-02-09",
+          "title": "Security Engineer (Zero-Trust, IAM)",
+          "status": "open",
+          "url": "https://example.com/jobs/Acme_Software-Security_Engineer_(Zero-Trust,_IAM)-2026-02-09-1"
+        },
+        {
+          "date": "2026-01-23",
+          "title": "Security Engineer (Zero-Trust, IAM)",
+          "status": "open",
+          "url": "https://example.com/jobs/Acme_Software-Security_Engineer_(Zero-Trust,_IAM)-2026-01-23-1"
+        },
+        {
+          "date": "2026-01-10",
+          "title": "Data Engineer (dbt + Snowflake)",
+          "status": "closed",
+          "url": "https://example.com/jobs/Acme_Software-Data_Engineer_(dbt_+_Snowflake)-2026-01-10-0"
+        },
+        {
+          "date": "2025-12-23",
+          "title": "Site Reliability Engineer (Kubernetes)",
+          "status": "closed",
+          "url": "https://example.com/jobs/Acme_Software-Site_Reliability_Engineer_(Kubernetes)-2025-12-23-0"
+        }
+      ]
+    },
+    {
+      "company": "CloudStack Inc.",
+      "ghost_score": 13.2,
+      "repost_count_30d": 1,
+      "repost_count_60d": 4,
+      "avg_lifespan_days": 51.7,
+      "title_vagueness": 0.1333,
+      "total_postings": 5,
+      "timeline": [
+        {
+          "date": "2026-02-16",
+          "title": "Backend Engineer (Rust)",
+          "status": "open",
+          "url": "https://example.com/jobs/CloudStack_Inc.-Backend_Engineer_(Rust)-2026-02-16-0"
+        },
+        {
+          "date": "2026-01-25",
+          "title": "Site Reliability Engineer (Kubernetes)",
+          "status": "open",
+          "url": "https://example.com/jobs/CloudStack_Inc.-Site_Reliability_Engineer_(Kubernetes)-2026-01-25-0"
+        },
+        {
+          "date": "2026-01-14",
+          "title": "Security Engineer (Zero-Trust, IAM)",
+          "status": "closed",
+          "url": "https://example.com/jobs/CloudStack_Inc.-Security_Engineer_(Zero-Trust,_IAM)-2026-01-14-2"
+        },
+        {
+          "date": "2025-12-30",
+          "title": "Security Engineer (Zero-Trust, IAM)",
+          "status": "closed",
+          "url": "https://example.com/jobs/CloudStack_Inc.-Security_Engineer_(Zero-Trust,_IAM)-2025-12-30-1"
+        },
+        {
+          "date": "2025-12-03",
+          "title": "Backend Engineer (Rust)",
+          "status": "closed",
+          "url": "https://example.com/jobs/CloudStack_Inc.-Backend_Engineer_(Rust)-2025-12-03-1"
+        }
+      ]
+    },
+    {
+      "company": "DataBridge Co.",
+      "ghost_score": 10.6,
+      "repost_count_30d": 0,
+      "repost_count_60d": 1,
+      "avg_lifespan_days": 47.5,
+      "title_vagueness": 0.1333,
+      "total_postings": 2,
+      "timeline": [
+        {
+          "date": "2025-12-29",
+          "title": "Data Engineer (dbt + Snowflake)",
+          "status": "closed",
+          "url": "https://example.com/jobs/DataBridge_Co.-Data_Engineer_(dbt_+_Snowflake)-2025-12-29-0"
+        },
+        {
+          "date": "2025-12-24",
+          "title": "iOS Engineer (Swift/SwiftUI)",
+          "status": "closed",
+          "url": "https://example.com/jobs/DataBridge_Co.-iOS_Engineer_(Swift/SwiftUI)-2025-12-24-0"
+        }
+      ]
+    }
+  ]
+}
